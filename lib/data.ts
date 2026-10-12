@@ -83,10 +83,10 @@ export const marquee = [
   "Vercel",
 ];
 
-/** Eski siteden (Şubat 2026) alınan herkese açık iletişim kanalları. */
+/** Herkese açık iletişim kanalları. */
 export const socials = [
   { label: "GitHub", value: "@samedcimen", url: "https://github.com/samedcimen" },
-  { label: "E-posta", value: "samedcimen.proje@gmail.com", url: "mailto:samedcimen.proje@gmail.com" },
+  { label: "E-posta", value: "samedcimen@hotmail.com", url: "mailto:samedcimen@hotmail.com" },
   { label: "Instagram", value: "@sameedcimeen", url: "https://www.instagram.com/sameedcimeen/" },
   { label: "X", value: "@sameddcimenn", url: "https://x.com/sameddcimenn" },
   { label: "Facebook", value: "scotuch", url: "https://www.facebook.com/scotuch" },

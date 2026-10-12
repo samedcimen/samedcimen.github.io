@@ -1,4 +1,42 @@
 import { live, manifesto, marquee, profile, skills, socials, stats } from "@/lib/data";
+import { site } from "@/lib/site";
+
+// Arama motorları için yapılandırılmış veri: kişi, web sitesi ve yayındaki ürünler
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${site.url}/#person`,
+      name: site.name,
+      url: site.url,
+      image: `${site.url}/img/avatar.webp`,
+      email: `mailto:${site.email}`,
+      jobTitle: "Full Stack Developer",
+      description: site.description,
+      knowsAbout: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Prisma", "Node.js", "Playwright"],
+      sameAs: socials.filter((s) => s.url.startsWith("http")).map((s) => s.url),
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${site.url}/#website`,
+      url: site.url,
+      name: site.name,
+      inLanguage: "tr-TR",
+      author: { "@id": `${site.url}/#person` },
+    },
+    ...live.map((p) => ({
+      "@type": "WebApplication",
+      name: p.name,
+      url: p.url,
+      description: p.desc,
+      applicationCategory: "WebApplication",
+      operatingSystem: "Web",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "TRY" },
+      author: { "@id": `${site.url}/#person` },
+    })),
+  ],
+};
 
 // Kart, buton ve rozetlerde ortak kalın kenar + sert gölge
 const box = "border-[2.5px] border-[#111] shadow-[6px_6px_0_#111]";
@@ -42,6 +80,10 @@ export default function Home() {
         backgroundColor: "#f6f1e7",
       }}
     >
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
+      <a href="#hakkimda" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-[#111] focus:px-4 focus:py-2 focus:text-white">
+        İçeriğe geç
+      </a>
       <style>{`
         @keyframes marquee{to{transform:translateX(-50%)}}
         @keyframes bob{0%,100%{transform:translateY(0) rotate(var(--r))}50%{transform:translateY(-6px) rotate(var(--r))}}
