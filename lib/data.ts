@@ -1,17 +1,6 @@
 export const profile = {
-  name: "Samed Çimen",
-  first: "SAMED",
-  last: "ÇİMEN",
-  role: "Kendi kendini yetiştirmiş web geliştirici",
   github: "https://github.com/samedcimen",
-  githubHandle: "@samedcimen",
 };
-
-export const nav = [
-  { id: "hakkimda", label: "Hakkımda" },
-  { id: "yetenekler", label: "Yetenekler" },
-  { id: "iletisim", label: "İletişim" },
-];
 
 export const manifesto =
   "Kod yazmayı bana kimse öğretmedi. Merak ettim, bozdum, yeniden kurdum. Bugün film ve dizi takip platformlarından gerçek zamanlı oran panellerine, canlı radyo yayınlarından profil fotoğrafı araçlarına kadar fikirden yayına uçtan uca ürünler geliştiriyorum.";
@@ -94,8 +83,12 @@ export const marquee = [
   "Vercel",
 ];
 
-export const links = [
+/** Eski siteden (Şubat 2026) alınan herkese açık iletişim kanalları. */
+export const socials = [
   { label: "GitHub", value: "@samedcimen", url: "https://github.com/samedcimen" },
-  { label: "ppbüyüt", value: "ppbuyut.com", url: "https://ppbuyut.com" },
-  { label: "İzleoloji", value: "izleoloji.vercel.app", url: "https://izleoloji.vercel.app" },
+  { label: "E-posta", value: "samedcimen.proje@gmail.com", url: "mailto:samedcimen.proje@gmail.com" },
+  { label: "Instagram", value: "@sameedcimeen", url: "https://www.instagram.com/sameedcimeen/" },
+  { label: "X", value: "@sameddcimenn", url: "https://x.com/sameddcimenn" },
+  { label: "Facebook", value: "scotuch", url: "https://www.facebook.com/scotuch" },
+  { label: "Buy Me a Coffee", value: "samedcimen", url: "https://buymeacoffee.com/samedcimen" },
 ];

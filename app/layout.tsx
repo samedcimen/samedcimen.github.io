@@ -1,37 +1,35 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Inter_Tight, JetBrains_Mono, Unbounded } from "next/font/google";
-import "lenis/dist/lenis.css";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const display = Unbounded({ variable: "--font-unbounded", subsets: ["latin", "latin-ext"] });
-const sans = Inter_Tight({ variable: "--font-inter-tight", subsets: ["latin", "latin-ext"] });
-const serif = Instrument_Serif({ variable: "--font-instrument", subsets: ["latin", "latin-ext"], weight: "400", style: "italic" });
-const mono = JetBrains_Mono({ variable: "--font-jetbrains", subsets: ["latin", "latin-ext"] });
+const grotesk = Space_Grotesk({ variable: "--f-grotesk", subsets: ["latin", "latin-ext"] });
+
+const description =
+  "Kendi kendini yetiştirmiş full stack web geliştirici. Next.js, React ve TypeScript ile fikirden yayına uçtan uca ürünler: ppbüyüt, İzleoloji ve daha fazlası.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://samedcimen.github.io"),
-  title: "Samed Çimen — Web Geliştirici",
-  description:
-    "Kendi kendini yetiştirmiş web geliştirici. Next.js, React ve TypeScript ile fikirden yayına uçtan uca ürünler: ppbüyüt, İzleoloji ve daha fazlası.",
+  title: "Samed Çimen — Full Stack Developer",
+  description,
   authors: [{ name: "Samed Çimen", url: "https://github.com/samedcimen" }],
   openGraph: {
-    title: "Samed Çimen — Web Geliştirici",
-    description: "Fikirleri ışık hızında çalışan web deneyimlerine dönüştürüyorum.",
+    title: "Samed Çimen — Full Stack Developer",
+    description,
     url: "https://samedcimen.github.io",
     siteName: "Samed Çimen",
     locale: "tr_TR",
     type: "website",
+    images: [{ url: "/img/avatar.webp", width: 460, height: 460, alt: "Samed Çimen" }],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#050507",
-  colorScheme: "dark",
+  themeColor: "#ffe14d",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="tr" className={`${display.variable} ${sans.variable} ${serif.variable} ${mono.variable} antialiased`}>
+    <html lang="tr" className={`${grotesk.variable} antialiased`}>
       <body>{children}</body>
     </html>
   );
